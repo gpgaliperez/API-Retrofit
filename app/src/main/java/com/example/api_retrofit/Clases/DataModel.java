@@ -6,27 +6,23 @@ public class DataModel {
     //Which is used as JSON model (POJO)
 
     //This class will be as a template for the data that we are going to parse
-    private int userId;
-    private int id;
     private String title;
+    private String url;
+    private String type;
 
    // @SerializedName("completed")  //its referes to "completed" found in JSON
-    private boolean completed;
+    //private boolean completed;
 
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public int getId() {
-        return id;
-    }
 
     public String getTitle() {
         return title;
     }
 
-    public boolean isCompleted() {
-        return completed;
+    public String getUrl() {
+        return url;
+    }
+
+    public String getType() {
+        return type;
     }
 }

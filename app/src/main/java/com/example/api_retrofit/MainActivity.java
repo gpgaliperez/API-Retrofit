@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         // Instance which uses the interface an the Builder API to allow defining the URL end point for the HTTP operations
         // Retrofit Builder
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://run.mocky.io/v3/")
+                //.baseUrl("https://run.mocky.io/v3/")
+                .baseUrl("https://api.seatgeek.com/2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -45,13 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 if(response.code() != 200){
                     txt.setText("Check the connection");
                 }else{
-
-                    //Get the data into textView
                     String json = "";
-                    json = "ID = " + response.body().getId() +
-                            "\n userId = " + response.body().getUserId() +
-                            "\n title = " + response.body().getTitle() +
-                            "\n completed = " + response.body().isCompleted();
+                    json =
+                            " title = " + response.body().getTitle() +
+                            "\n url = " + response.body().getUrl() +
+                            "\n type = " + response.body().getTitle();
 
                     txt.append(json);
                 }
